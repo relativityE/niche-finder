@@ -143,12 +143,12 @@ const NicheFinder = () => {
   ];
 
   const categoryData = [
-    { name: 'Productivity', value: 25, color: '#8884d8' },
-    { name: 'Health & Wellness', value: 20, color: '#82ca9d' },
-    { name: 'Education', value: 18, color: '#ffc658' },
-    { name: 'Finance', value: 15, color: '#ff7300' },
-    { name: 'Entertainment', value: 12, color: '#00ff88' },
-    { name: 'Other', value: 10, color: '#0088fe' }
+    { name: 'Productivity', value: 25, color: '#22d3ee' },
+    { name: 'Health & Wellness', value: 20, color: '#67e8f9' },
+    { name: 'Education', value: 18, color: '#a5f3fc' },
+    { name: 'Finance', value: 15, color: '#cffafe' },
+    { name: 'Entertainment', value: 12, color: '#ecfeff' },
+    { name: 'Other', value: 10, color: '#0891b2' }
   ];
 
   const competitionData = niches.map(niche => ({
@@ -182,12 +182,12 @@ const NicheFinder = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50">
       <div className="container mx-auto px-6 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center gap-3">
-            <Target className="w-10 h-10 text-indigo-600" />
+            <Target className="w-10 h-10 text-cyan-600" />
             AI Niche Finder Dashboard
           </h1>
           <p className="text-gray-600 text-lg">Discover profitable digital product opportunities using AI-powered trend analysis</p>
@@ -203,7 +203,7 @@ const NicheFinder = () => {
                 <input
                   type="text"
                   placeholder="Search by name, category, or keyword..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -212,7 +212,7 @@ const NicheFinder = () => {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Time Range</label>
               <select 
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500"
                 value={timeRange}
                 onChange={(e) => setTimeRange(e.target.value)}
               >
@@ -225,7 +225,7 @@ const NicheFinder = () => {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Analysis Type</label>
               <select 
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500"
                 value={analysisType}
                 onChange={(e) => setAnalysisType(e.target.value)}
               >
@@ -236,7 +236,7 @@ const NicheFinder = () => {
               </select>
             </div>
             <div className="flex items-end">
-              <button className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2">
+              <button className="w-full bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700 transition-colors flex items-center justify-center gap-2">
                 <TrendingUp className="w-4 h-4" />
                 Analyze Trends
               </button>
@@ -252,7 +252,7 @@ const NicheFinder = () => {
                 <p className="text-sm text-gray-600">Total Niches</p>
                 <p className="text-2xl font-bold text-gray-800">{filteredNiches.length}</p>
               </div>
-              <Target className="w-8 h-8 text-indigo-600" />
+              <Target className="w-8 h-8 text-cyan-600" />
             </div>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6">
@@ -260,7 +260,7 @@ const NicheFinder = () => {
               <div>
                 <p className="text-sm text-gray-600">Avg Revenue Potential</p>
                 <p className="text-2xl font-bold text-green-600">
-                  ${Math.round(filteredNiches.reduce((acc, n) => acc + n.revenue_potential, 0) / filteredNiches.length / 1000)}K
+                  ${filteredNiches.length > 0 ? Math.round(filteredNiches.reduce((acc, n) => acc + n.revenue_potential, 0) / filteredNiches.length / 1000) : 0}K
                 </p>
               </div>
               <DollarSign className="w-8 h-8 text-green-600" />
@@ -305,8 +305,8 @@ const NicheFinder = () => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="searches" stroke="#8884d8" strokeWidth={2} />
-                <Line type="monotone" dataKey="mentions" stroke="#82ca9d" strokeWidth={2} />
+                <Line type="monotone" dataKey="searches" stroke="#22d3ee" strokeWidth={2} />
+                <Line type="monotone" dataKey="mentions" stroke="#0891b2" strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -360,7 +360,7 @@ const NicheFinder = () => {
                   return null;
                 }}
               />
-              <Scatter dataKey="opportunity" fill="#8884d8" />
+              <Scatter dataKey="opportunity" fill="#22d3ee" />
             </ScatterChart>
           </ResponsiveContainer>
         </div>
@@ -375,7 +375,7 @@ const NicheFinder = () => {
               <div 
                 key={niche.id} 
                 className={`border rounded-lg p-4 cursor-pointer transition-all hover:shadow-md ${
-                  selectedNiche?.id === niche.id ? 'border-indigo-500 bg-indigo-50' : 'border-gray-200'
+                  selectedNiche?.id === niche.id ? 'border-cyan-500 bg-cyan-50' : 'border-gray-200'
                 }`}
                 onClick={() => setSelectedNiche(selectedNiche?.id === niche.id ? null : niche)}
               >
@@ -390,7 +390,7 @@ const NicheFinder = () => {
                   <div className="flex items-center gap-4">
                     <div className="text-right">
                       <p className="text-sm text-gray-600">Opportunity Score</p>
-                      <p className="text-xl font-bold text-indigo-600">{niche.opportunity_score}</p>
+                      <p className="text-xl font-bold text-cyan-600">{niche.opportunity_score}</p>
                     </div>
                   </div>
                 </div>

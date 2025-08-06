@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# AI Niche Finder Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application that provides a dashboard for discovering profitable digital product opportunities. It uses AI-powered trend analysis to provide insights into various niches.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+*   **Niche Discovery:** Browse a list of niches with key metrics like profitability, competition, and revenue potential.
+*   **Trend Analysis:** Visualize search and engagement trends for different niches over time.
+*   **Platform Insights:** Get data from TikTok, Reddit, and Google to understand the potential of each niche.
+*   **Opportunity Scoring:** Each niche is assigned an opportunity score to help you identify the most promising ones.
+*   **Modern UI:** A clean and modern user interface built with React and Tailwind CSS.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+You will need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1.  Clone the repository:
+    ```sh
+    git clone <repository-url>
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd <project-directory>
+    ```
+3.  Install the dependencies:
+    ```sh
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Running the Application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the application in development mode, use the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm start
+```
 
-### `npm run eject`
+This will open the application in your browser at [http://localhost:3000](http://localhost:3000).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Running Tests
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the automated tests for this project, use the following command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+npm test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Note:** There are currently known issues with the test environment that cause the tests to time out. This is a known issue and is being tracked. For now, manual testing is recommended.
 
-## Learn More
+### Manual Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+As per the project guidelines, manual testing is the recommended way to verify the functionality of the application. Here's how you can do it:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1.  **Run the application:** `npm start`
+2.  **Open the application in your browser.**
+3.  **Interact with the UI:**
+    *   Use the search bar to filter niches by name, category, or keyword.
+    *   Select different time ranges from the dropdown to see how it affects the data (Note: this is currently mock data).
+    *   Select different analysis types from the dropdown.
+    *   Click on a niche to expand it and see more details.
+    *   Hover over the charts to see tooltips with more information.
+
+## Built With
+
+*   [React](https://reactjs.org/) - The web framework used.
+*   [TypeScript](https://www.typescriptlang.org/) - For static typing.
+*   [Tailwind CSS](https://tailwindcss.com/) - For styling.
+*   [Recharts](https://recharts.org/) - For charts.
+*   [Lucide React](https://lucide.dev/guide/packages/lucide-react) - for icons.
